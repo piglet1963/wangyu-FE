@@ -1,5 +1,5 @@
 import fetch_mock from "./mock/data"
-const API_BASE_PATH = "www.XXX.com"
+const API_BASE_PATH = ""
 
 const getHeaders = () => {
   const headerObj = {
@@ -10,7 +10,7 @@ const getHeaders = () => {
   return headerObj
 }
 
-function fetch_post<T>(url: string, payload?: any, options?: any) {
+async function fetch_post<T>(url: string, payload?: any, options?: any) {
   const api_endpoint = API_BASE_PATH + url
   const requestOptions = {
     method: 'POST',
@@ -23,16 +23,17 @@ function fetch_post<T>(url: string, payload?: any, options?: any) {
   return fetch_mock(api_endpoint, requestOptions)
 }
 
-function fetch_get<T>(url: string, options?: any) {
+async function fetch_get<T>(url: string, payload?: any, options?: any) {
   const api_endpoint = API_BASE_PATH + url
   const requestOptions = {
     method: 'GET',
     headers: getHeaders(),
+    body: payload,
     cache: 'no-store',
     credentials: 'include',
     ...options
   };
-  return fetch_mock(api_endpoint, requestOptions)
+  return await fetch_mock(api_endpoint, requestOptions)
 }
 
 export default {

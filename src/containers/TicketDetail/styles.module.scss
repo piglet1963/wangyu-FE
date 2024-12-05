@@ -1,0 +1,21 @@
+.content {
+  background-color: #fff;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .flex {
+    flex: 1;
+  }
+}
+
+.relates {
+  .relateCards {
+    width: 300px;
+    display: inline-block;
+    margin-right: 16px;
+    margin-bottom: 16px;
+  }
+}
+

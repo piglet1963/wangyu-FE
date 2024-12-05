@@ -3,7 +3,8 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/locale/zh_CN';
 import Layouts from "./components/Layouts";
-import TickList from "./containers/TickList";
+import TicketList from "./containers/TicketList";
+import TicketDetail from "./containers/TicketDetail";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <Layouts>
         <BrowserRouter>
           <Routes>
-            <Route path="tickList" element={<TickList />}/>
+            <Route path="ticketList" element={<TicketList />}/>
+            <Route path="ticketDetail/:id" element={<TicketDetail />}/>
           </Routes>
         </BrowserRouter>
       </Layouts>
