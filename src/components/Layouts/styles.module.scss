@@ -1,0 +1,16 @@
+.header {
+  position: sticky;
+  top: 0;
+  zIndex: 1;
+  width: 100%;
+  display: flex;
+  alignItems: center;
+}
+
+.content {
+  padding: 0 48px;
+}
+
+.footer {
+  text-align: center;
+}
